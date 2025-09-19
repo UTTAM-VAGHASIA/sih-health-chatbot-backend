@@ -89,7 +89,8 @@ sih-backend/
 * Configure inbound webhook (`routers/sms.py`)
 * Implement outbound SMS reply handler
 
-**Deliverable:** Both WhatsApp and SMS bots working with echo responses.
+**Deliverable (Phase 1):** WhatsApp bot echo response working.
+**Deliverable (Phase 2):** SMS bot echo response working.
 
 ---
 
@@ -205,8 +206,9 @@ sih-backend/
 ## ✅ Tracking Status (to update in Master Doc)
 
 * Env setup → ✅ (done)
-* Repo + boilerplate → 🚧 (partially done)
-* WhatsApp/SMS → ❌ (pending)
+* Repo + boilerplate → ✅ (done)
+* WhatsApp → 🚧 (in progress, echo bot setup)
+* SMS → ❌ (pending)
 * NLP → ❌
 * Health APIs → ❌
 * DB/logging → ❌

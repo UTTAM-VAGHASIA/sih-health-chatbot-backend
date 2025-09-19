@@ -336,9 +336,14 @@ git push
 * ✅ Added Dockerfile (Python 3.13, FastAPI, pip-based).
 * ✅ Configured GitHub Actions CI (lint + tests + Docker build).
 +   → CI now respects project configs (.flake8, mypy.ini, pyproject.toml).
+* 🚧 Next: Start WhatsApp Cloud API integration (basic echo bot).
 
 ### Section 9 (Next Action Items)
 
-1. Configure GitHub Actions (CI pipeline).
+1. Setup WhatsApp Cloud API sandbox in Meta Developer Portal.
+2. Add FastAPI webhook route (src/routers/whatsapp.py).
+3. Configure webhook verification + message echo.
+4. Test with sandbox number (send message → get reply).
+5. Commit & push WhatsApp bot code.
 
 ---
