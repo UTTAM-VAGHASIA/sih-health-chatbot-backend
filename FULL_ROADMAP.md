@@ -204,8 +204,8 @@ sih-backend/
 
 ## ✅ Tracking Status (to update in Master Doc)
 
-* Env setup → ✅ (partially done)
-* Repo + boilerplate → 🚧 (to initialize)
+* Env setup → ✅ (done)
+* Repo + boilerplate → 🚧 (partially done)
 * WhatsApp/SMS → ❌ (pending)
 * NLP → ❌
 * Health APIs → ❌

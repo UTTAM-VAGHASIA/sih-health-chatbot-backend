@@ -331,13 +331,13 @@ git push
 * ✅ Initialized FastAPI app (`main.py` with `/ping` endpoint).
 * ✅ Added `.gitignore`.
 * ✅ Added backend project skeleton (routers, services, db, utils, tests, docker, ci).
-* 🚧 Next: Setup pre-commit hooks (black, isort, flake8).
+* ✅ Setup pre-commit hooks (black, isort, flake8, mypy).
+* 🚧 Next: Write first test case for `/ping`.
 
 ### Section 9 (Next Action Items)
 
-1. Setup **pre-commit hooks** (black, isort, flake8).
-2. Write first test case for `/ping`.
-3. Prepare Dockerfile (for FastAPI + Uvicorn).
-4. Configure GitHub Actions (CI pipeline).
+1. Write first test case for `/ping`.
+2. Prepare Dockerfile (for FastAPI + Uvicorn).
+3. Configure GitHub Actions (CI pipeline).
 
 ---
