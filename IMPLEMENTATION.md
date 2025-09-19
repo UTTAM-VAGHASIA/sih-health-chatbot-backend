@@ -334,7 +334,8 @@ git push
 * ✅ Setup pre-commit hooks (black, isort, flake8, mypy).
 * ✅ Added first test case for `/ping`.
 * ✅ Added Dockerfile (Python 3.13, FastAPI, pip-based).
-* 🚧 Next: Configure GitHub Actions (CI pipeline).
+* ✅ Configured GitHub Actions CI (lint + tests + Docker build).
++   → CI now respects project configs (.flake8, mypy.ini, pyproject.toml).
 
 ### Section 9 (Next Action Items)
 

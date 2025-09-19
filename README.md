@@ -2,6 +2,30 @@
 
 AI-Driven **Public Health Chatbot** for disease awareness, preventive healthcare, vaccination schedules, and outbreak alerts. Built as part of **SIH 2025 (Problem ID: 25049)** for Govt. of Odisha (Electronics & IT Dept.).
 
+<div align="left">
+
+[![CI](https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.13-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.116-green)
+![License](https://img.shields.io/github/license/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Lines of code](https://img.shields.io/tokei/lines/github/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Last commit](https://img.shields.io/github/last-commit/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Commit activity](https://img.shields.io/github/commit-activity/m/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Open issues](https://img.shields.io/github/issues/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Open PRs](https://img.shields.io/github/issues-pr/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Stars](https://img.shields.io/github/stars/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Forks](https://img.shields.io/github/forks/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+
+<!-- Code quality & tooling -->
+![Code style: black](https://img.shields.io/badge/code%20style-black-000000)
+![Imports: isort](https://img.shields.io/badge/imports-isort-ef8336)
+![Lint: flake8](https://img.shields.io/badge/lint-flake8-007EC6)
+![Types: mypy](https://img.shields.io/badge/types-mypy-2A6DB2)
+![Tests: pytest](https://img.shields.io/badge/tests-pytest-0A9EDC)
+![Docker](https://img.shields.io/badge/docker-ready-2496ED)
+
+</div>
+
 ---
 
 ## 🚀 Features
@@ -82,7 +106,11 @@ cd sih-health-chatbot-backend
 
 ```bash
 poetry install
-poetry shell
+# To create env and activate it
+poetry env activate
+
+# If the above command does not activate it, then use the following command to activate venv
+.\.venv\Scripts\activate
 ```
 
 ### 3. Run FastAPI Backend
@@ -138,11 +166,14 @@ pytest
 
 ## 📜 License
 
-MIT License © 2025
+Licensed under the [MIT License](./LICENSE) © 2025.
 
 ---
 
 ## 👨‍💻 Contributors
 
-* **Uttam Vaghasia** – Backend Developer
-* Team SIH 2025
+Thanks to all the amazing contributors. This section updates automatically.
+
+<!-- contributors:start -->
+<!-- contributors:end -->
+
