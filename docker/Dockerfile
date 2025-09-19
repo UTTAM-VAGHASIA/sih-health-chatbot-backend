@@ -13,9 +13,9 @@ RUN apt-get update && apt-get install -y \
 
 # Upgrade pip & install dependencies directly from pyproject.toml
 # (since we are not using poetry.lock here)
-COPY pyproject.toml README.md ./
+COPY requirements.txt ./
 RUN pip install --upgrade pip \
-    && pip install fastapi uvicorn[standard] requests python-dotenv
+    && pip install -r requirements.txt
 
 # Copy project files
 COPY . .
@@ -24,4 +24,5 @@ COPY . .
 EXPOSE 8000
 
 # Run the FastAPI app
-CMD ["uvicorn", "src.main:app", "--host", "127.0.0.1", "--port", "8000"]
+# Change host to 127.0.0.1 from 0.0.0.0 when running locally and not from docker container
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
