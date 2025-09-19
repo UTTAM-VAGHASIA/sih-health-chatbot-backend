@@ -332,12 +332,12 @@ git push
 * ✅ Added `.gitignore`.
 * ✅ Added backend project skeleton (routers, services, db, utils, tests, docker, ci).
 * ✅ Setup pre-commit hooks (black, isort, flake8, mypy).
-* 🚧 Next: Write first test case for `/ping`.
+* ✅ Added first test case for `/ping`.
+* 🚧 Next: Prepare Dockerfile (for FastAPI + Uvicorn).
 
 ### Section 9 (Next Action Items)
 
-1. Write first test case for `/ping`.
-2. Prepare Dockerfile (for FastAPI + Uvicorn).
-3. Configure GitHub Actions (CI pipeline).
+1. Prepare Dockerfile (for FastAPI + Uvicorn).
+2. Configure GitHub Actions (CI pipeline).
 
 ---

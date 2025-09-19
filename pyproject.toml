@@ -25,4 +25,22 @@ isort = "^6.0.1"
 flake8 = "^7.3.0"
 mypy = "^1.18.2"
 pre-commit = "^4.3.0"
+pytest = "^8.4.2"
+pytest-asyncio = "^1.2.0"
+httpx = "^0.28.1"
 
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E501","E203","W503"]
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip = [".gitignore", ".dockerignore"]
+extend_skip = [".md", ".json"]
