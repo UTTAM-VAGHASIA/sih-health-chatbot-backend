@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.venv
+poetry.lock
+dist/
+build/
+docker-compose.override.yml
