@@ -4,11 +4,11 @@ AI-Driven **Public Health Chatbot** for disease awareness, preventive healthcare
 
 <div align="left">
 
-[![CI](https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/actions/workflows/ci.yml)
+[![CI](https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.13-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.116-green)
 ![License](https://img.shields.io/github/license/UTTAM-VAGHASIA/sih-health-chatbot-backend)
-![Lines of code](https://img.shields.io/tokei/lines/github/UTTAM-VAGHASIA/sih-health-chatbot-backend)
+![Lines Of Code](https://tokei.rs/b1/github/UTTAM-VAGHASIA/sih-health-chatbot-backend?category=code)
 ![Last commit](https://img.shields.io/github/last-commit/UTTAM-VAGHASIA/sih-health-chatbot-backend)
 ![Commit activity](https://img.shields.io/github/commit-activity/m/UTTAM-VAGHASIA/sih-health-chatbot-backend)
 ![Open issues](https://img.shields.io/github/issues/UTTAM-VAGHASIA/sih-health-chatbot-backend)
@@ -98,7 +98,7 @@ sih-backend/
 ### 1. Clone Repo
 
 ```bash
-git clone https://github.com/<your-username>/sih-health-chatbot-backend.git
+git clone https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend.git
 cd sih-health-chatbot-backend
 ```
 
@@ -170,10 +170,15 @@ Licensed under the [MIT License](./LICENSE) © 2025.
 
 ---
 
-## 👨‍💻 Contributors
+## Creators [🔝](#sih-health-chatbot-backend)
 
-Thanks to all the amazing contributors. This section updates automatically.
+| Author | Collaborator |
+| :---: | :---: |
+| [<img src="https://github.com/UTTAM-VAGHASIA.png?size=115" width=115><br><sub>@UTTAM-VAGHASIA</sub>](https://github.com/UTTAM-VAGHASIA) | No other Collaborators |
 
-<!-- contributors:start -->
-<!-- contributors:end -->
+## Thanks to all contributors ❤
+
+<a href="https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=UTTAM-VAGHASIA/sih-health-chatbot-backend" />
+</a>
 
