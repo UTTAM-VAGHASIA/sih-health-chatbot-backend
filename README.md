@@ -64,9 +64,9 @@ AI-Driven **Public Health Chatbot** for disease awareness, preventive healthcare
 
 ```
 sih-backend/
-├── src/
+├── src/                      # Source code
 │   ├── main.py              # FastAPI entrypoint
-│   ├── routers/             # Endpoints
+│   ├── routers/             # API endpoints
 │   │   ├── whatsapp.py
 │   │   ├── sms.py
 │   │   ├── health.py
@@ -79,23 +79,26 @@ sih-backend/
 │   │   ├── models.py
 │   │   └── crud.py
 │   ├── utils/               # Helpers
-│   └── config.py            # Env + settings
+│   └── config.py            # Configuration
+│
+├── scripts/                 # Automation scripts
+│   ├── start-app.bat        # Windows startup
+│   └── start-app.sh         # Linux/macOS startup
 │
 ├── tests/                   # Unit/integration tests
-├── docker/
+├── docker/                  # Docker configuration
 │   └── Dockerfile
-├── pyproject.toml            # Poetry deps
-├── requirements.txt (export)
-├── README.md
-└── .github/
-    └── workflows/ci.yml
+├── pyproject.toml           # Poetry dependencies
+├── requirements.txt         # Pip dependencies
+├── docker-compose.yml       # Docker Compose setup
+└── README.md
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Quick Start
 
-### 1. Clone Repo
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/UTTAM-VAGHASIA/sih-health-chatbot-backend.git
@@ -123,48 +126,130 @@ Check health endpoint: [http://127.0.0.1:8000/ping](http://127.0.0.1:8000/ping)
 
 ### 4. Run with Docker
 
+#### Option A: Docker Compose with Cloudflare Tunnel (Recommended)
+
+**Windows:**
+```bash
+scripts\start-app.bat
+```
+
+**Linux/macOS:**
+```bash
+chmod +x scripts/start-app.sh
+./scripts/start-app.sh
+```
+
+**Manual:**
+```bash
+docker-compose up --build
+```
+
+**What happens:**
+- ✅ **Docker containers start** (backend + cloudflared tunnel)
+- ✅ **Cloudflare creates** temporary URL (e.g., `https://abc123.trycloudflare.com`)
+- ✅ **Your webhook URL** will be: `https://abc123.trycloudflare.com/webhook/whatsapp`
+
+#### Option B: Docker without tunnel (Local only)
+
 ```bash
 docker build -t sih-chatbot-backend .
 docker run -p 8000:8000 sih-chatbot-backend
 ```
 
----
-
-## 🔌 Integrations
-
-* **WhatsApp Cloud API** → Webhook for chatbot messaging
-* **SMS Gateway (Twilio/Gupshup)** → SMS-based interactions
-* **Rasa/Dialogflow/LLM API** → NLP for intent recognition
-* **Postgres** → Conversation logging & analytics
-* **Admin API** → Data for dashboard frontend
+**Note:** Option B only works locally. For WhatsApp webhooks, use Option A with Cloudflare tunnel.
 
 ---
 
-## 🧪 Testing
+## 📱 WhatsApp Integration
 
-Run tests with:
+### Manual Webhook Setup
+
+1. **Start your application** using one of the methods above
+2. **Get your tunnel URL** from the cloudflared logs (look for `https://xxxxx.trycloudflare.com`)
+3. **Go to [Meta Developer Console](https://developers.facebook.com/)**
+4. **Navigate to your WhatsApp Business App**
+5. **Go to WhatsApp > Configuration**
+6. **Update webhook URL** to: `https://your-tunnel-url.trycloudflare.com/webhook/whatsapp`
+7. **Set verify token** to: `sih-health-chatbot-secret`
+
+### Webhook Endpoints
+
+- **POST** `/webhook/whatsapp` - WhatsApp message webhook
+- **GET** `/webhook/whatsapp` - WhatsApp webhook verification
+
+---
+
+## 🔧 Development
+
+### Local Development (without Docker)
 
 ```bash
+# Install dependencies
+poetry install
+poetry shell
+
+# Run FastAPI backend
+uvicorn src.main:app --reload --port 8000
+```
+
+### Testing
+
+```bash
+# Run all tests
 pytest
+
+# Run with coverage
+pytest --cov=src
+
+# Run specific test file
+pytest tests/test_main.py
 ```
 
 ---
 
-## 🚧 Roadmap
+## 🚀 Deployment
 
-* [x] Environment setup (Git, Node.js, Python, Docker, gh, WSL)
-* [x] Repo initialization + FastAPI boilerplate (`/ping`)
-* [ ] WhatsApp & SMS bot integration
-* [ ] NLP engine connection
-* [ ] Health data APIs
-* [ ] Database models & logging
-* [ ] Admin API
-* [ ] Dockerized deployment with CI/CD
-* [ ] Test coverage ≥70%
+### Docker Deployment
+
+```bash
+# Start application
+docker-compose up --build -d
+
+# Check logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+```
+
+### Production Considerations
+
+1. **Use environment variables** for all configuration
+2. **Set up proper monitoring** and logging
+3. **Configure health checks** for your containers
+4. **Use persistent storage** for databases
+5. **Set up SSL certificates** if using custom domains
 
 ---
 
-## 📜 License
+## 📚 Documentation
+
+- [IMPLEMENTATION.md](IMPLEMENTATION.md) - Implementation details
+- [FULL_ROADMAP.md](FULL_ROADMAP.md) - Complete project roadmap
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -am 'Add feature'`
+4. Push to branch: `git push origin feature-name`
+5. Submit a Pull Request
+
+---
+
+## License
 
 Licensed under the [MIT License](./LICENSE) © 2025.
 
@@ -182,3 +267,4 @@ Licensed under the [MIT License](./LICENSE) © 2025.
   <img src="https://contrib.rocks/image?repo=UTTAM-VAGHASIA/sih-health-chatbot-backend" />
 </a>
 
+---

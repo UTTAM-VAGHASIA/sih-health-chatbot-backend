@@ -336,7 +336,8 @@ git push
 * ✅ Added Dockerfile (Python 3.13, FastAPI, pip-based).
 * ✅ Configured GitHub Actions CI (lint + tests + Docker build).
 +   → CI now respects project configs (.flake8, mypy.ini, pyproject.toml).
-* 🚧 Next: Start WhatsApp Cloud API integration (basic echo bot).
+* ✅ Added docker-compose with backend + Cloudflared tunnel.
+* 🚧 Next: Configure webhook in Meta dashboard & test echo.
 
 ### Section 9 (Next Action Items)
 

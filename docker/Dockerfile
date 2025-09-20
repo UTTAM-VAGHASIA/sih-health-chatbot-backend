@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
 # (since we are not using poetry.lock here)
 COPY requirements.txt ./
 RUN pip install --upgrade pip \
-    && pip install -r requirements.txt
+    && pip install -r requirements.txt \
+    && pip install black isort flake8 mypy pytest pytest-asyncio httpx
 
 # Copy project files
 COPY . .

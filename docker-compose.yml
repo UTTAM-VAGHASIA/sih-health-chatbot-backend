@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: sih-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - WHATSAPP_VERIFY_TOKEN=sih-health-chatbot-secret
+      - WHATSAPP_ACCESS_TOKEN=${WHATSAPP_ACCESS_TOKEN}
+      - WHATSAPP_PHONE_NUMBER_ID=${WHATSAPP_PHONE_NUMBER_ID}
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    command: tunnel --url http://backend:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
