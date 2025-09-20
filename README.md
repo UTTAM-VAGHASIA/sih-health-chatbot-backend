@@ -259,7 +259,7 @@ Licensed under the [MIT License](./LICENSE) © 2025.
 
 | Author | Collaborator |
 | :---: | :---: |
-| [<img src="https://github.com/UTTAM-VAGHASIA.png?size=115" width=115><br><sub>@UTTAM-VAGHASIA</sub>](https://github.com/UTTAM-VAGHASIA) | No other Collaborators |
+| [<img src="https://github.com/UTTAM-VAGHASIA.png?size=115" width=115><br><sub>@UTTAM-VAGHASIA</sub>](https://github.com/UTTAM-VAGHASIA) | [<img src="https://github.com/purify010622.png?size=115" width=115><br><sub>@Sarthak Yerpude</sub>](https://github.com/purify010622) |
 
 ## Thanks to all contributors ❤
 
