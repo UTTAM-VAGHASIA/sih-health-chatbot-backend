@@ -337,14 +337,17 @@ git push
 * ✅ Configured GitHub Actions CI (lint + tests + Docker build).
 +   → CI now respects project configs (.flake8, mypy.ini, pyproject.toml).
 * ✅ Added docker-compose with backend + Cloudflared tunnel.
-* 🚧 Next: Configure webhook in Meta dashboard & test echo.
+* ✅ WhatsApp Cloud API integration completed:
+  + ✅ Meta Developer Portal sandbox configured
+  + ✅ FastAPI webhook route (/webhook/whatsapp) implemented
+  + ✅ Webhook verification (GET) and message handling (POST) working
+  + ✅ Message echo functionality operational
+  + ✅ Environment variables configured for production
 
 ### Section 9 (Next Action Items)
 
-1. Setup WhatsApp Cloud API sandbox in Meta Developer Portal.
-2. Add FastAPI webhook route (src/routers/whatsapp.py).
-3. Configure webhook verification + message echo.
-4. Test with sandbox number (send message → get reply).
-5. Commit & push WhatsApp bot code.
+* 1. Start SMS integration - Choose SMS provider (Twilio/Gupshup) and get API credentials
+* 2. Basic health responses - Replace echo with simple health info responses (symptoms checker, vaccine info)
+
 
 ---
