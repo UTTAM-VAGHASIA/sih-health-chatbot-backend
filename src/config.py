@@ -84,6 +84,7 @@ def setup_logging() -> None:
         "simple": "%(levelname)s - %(message)s",
         "detailed": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         "structured": "%(asctime)s | %(levelname)-8s | %(name)-20s | %(funcName)-15s | %(message)s",
+        "demo": "%(asctime)s | DEMO | %(levelname)-8s | %(message)s",
     }
 
     log_format = formats.get(Config.LOG_FORMAT, formats["detailed"])
@@ -95,6 +96,7 @@ def setup_logging() -> None:
         "formatters": {
             "default": {"format": log_format, "datefmt": "%Y-%m-%d %H:%M:%S"},
             "access": {"format": "%(asctime)s - ACCESS - %(message)s", "datefmt": "%Y-%m-%d %H:%M:%S"},
+            "demo": {"format": formats["demo"], "datefmt": "%Y-%m-%d %H:%M:%S"},
         },
         "handlers": {
             "console": {

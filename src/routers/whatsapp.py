@@ -447,6 +447,10 @@ async def handle_text_message(from_number: str, message_text: str, request_id: s
         message_text: Text content of the message
         request_id: Request ID for tracking
     """
+    import time
+
+    start_time = time.time()
+
     try:
         # Generate intelligent response
         response = message_service.generate_response(message_text, from_number)
@@ -458,6 +462,9 @@ async def handle_text_message(from_number: str, message_text: str, request_id: s
         # Send response via WhatsApp API with retry logic
         send_result = await send_message_with_retry(from_number, response.content, request_id)
 
+        # Calculate processing time for demo logging
+        processing_time = (time.time() - start_time) * 1000  # Convert to milliseconds
+
         if not send_result.get("success", False):
             logger.warning(
                 f"RESPONSE_SEND_FAILED - To: {from_number}, Error: {send_result.get('error')} - Request: {request_id}"
@@ -466,6 +473,19 @@ async def handle_text_message(from_number: str, message_text: str, request_id: s
             await send_error_fallback(from_number, "network", request_id)
         else:
             logger.info(f"RESPONSE_SENT - To: {from_number} - Request: {request_id}")
+
+            # Demo-specific logging for judge evaluation
+            try:
+                from src.utils.demo_utils import demo_logger
+
+                demo_logger.log_user_interaction(
+                    phone_number=from_number,
+                    message=message_text,
+                    response=response.content,
+                    processing_time=processing_time,
+                )
+            except Exception as demo_log_error:
+                logger.debug(f"Demo logging failed: {str(demo_log_error)} - Request: {request_id}")
 
     except Exception as e:
         logger.error(f"TEXT_MESSAGE_ERROR - For {from_number}: {str(e)} - Request: {request_id}")

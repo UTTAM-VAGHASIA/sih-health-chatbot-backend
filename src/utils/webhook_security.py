@@ -42,6 +42,11 @@ def verify_webhook_signature(payload: bytes, signature: str, secret: Optional[st
         logger.warning("Webhook signature verification skipped - no secret configured")
         return True
 
+    # DEVELOPMENT MODE: Skip signature verification for easier testing
+    if Config.ENVIRONMENT == "development":
+        logger.info("Webhook signature verification skipped - development mode")
+        return True
+
     # Validate signature format
     if not signature:
         logger.warning("Missing webhook signature")
@@ -66,6 +71,8 @@ def verify_webhook_signature(payload: bytes, signature: str, secret: Optional[st
             logger.debug("Webhook signature verification successful")
         else:
             logger.warning("Webhook signature verification failed")
+            logger.debug(f"Expected: {expected_signature}")
+            logger.debug(f"Received: {received_hash}")
 
         return is_valid
 
