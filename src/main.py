@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 
-from src.routers import whatsapp
+from src.routers import admin, whatsapp
 
 app = FastAPI(title="SIH Health Chatbot Backend")
 
 app.include_router(whatsapp.router)
+app.include_router(admin.router)
 
 
 @app.get("/ping")
