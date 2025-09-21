@@ -6,3 +6,4 @@ poetry.lock
 dist/
 build/
 docker-compose.override.yml
+.kiro/
