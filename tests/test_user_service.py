@@ -5,12 +5,12 @@ Tests cover user registration, management, and all functionality
 required for the WhatsApp demo bot.
 """
 
-from datetime import datetime, timedelta
-from unittest.mock import MagicMock, patch
+from datetime import datetime
+from unittest.mock import patch
 
 import pytest
 
-from src.db.models import User, clear_storage, users_db
+from src.db.models import clear_storage
 from src.services.user_service import UserService
 
 

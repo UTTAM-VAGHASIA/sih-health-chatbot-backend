@@ -27,8 +27,8 @@ services:
           path: ./pyproject.toml
         - action: rebuild
           path: ./docker/Dockerfile.dev
-        - action: rebuild
-          path: ./.env
+        - action: sync
+          path: ./
     command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
   cloudflared:

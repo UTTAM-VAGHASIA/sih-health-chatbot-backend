@@ -7,16 +7,16 @@ to all registered WhatsApp users. It includes input validation,
 error handling, and comprehensive logging for demo purposes.
 """
 
-import logging
 from typing import List, Optional
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field, field_validator
 
+from src.config import get_logger
 from src.routers.whatsapp import send_message
 from src.services.user_service import UserService
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 

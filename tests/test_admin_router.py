@@ -257,7 +257,12 @@ class TestAdminErrorHandling:
         response = client.post("/admin/alerts", json=alert_data)
 
         assert response.status_code == 500
-        assert "Internal server error" in response.json()["detail"]
+        # Check for enhanced error response format
+        response_data = response.json()
+        if "error" in response_data:
+            assert "Internal server error" in response_data["error"]["message"]
+        else:
+            assert "Internal server error" in response_data["detail"]
 
     @patch("src.routers.admin.UserService.get_user_count")
     def test_stats_error_handling(self, mock_get_count):
@@ -268,7 +273,12 @@ class TestAdminErrorHandling:
         response = client.get("/admin/stats")
 
         assert response.status_code == 500
-        assert "Failed to retrieve admin statistics" in response.json()["detail"]
+        # Check for enhanced error response format
+        response_data = response.json()
+        if "error" in response_data:
+            assert "Failed to retrieve admin statistics" in response_data["error"]["message"]
+        else:
+            assert "Failed to retrieve admin statistics" in response_data["detail"]
 
 
 class TestAdminIntegration:

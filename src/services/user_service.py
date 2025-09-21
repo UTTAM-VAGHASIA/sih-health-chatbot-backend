@@ -5,13 +5,12 @@ This service handles user registration, management, and provides methods
 for user-related operations including automatic registration and broadcasting.
 """
 
-import logging
-from datetime import datetime
 from typing import List, Optional
 
+from src.config import get_logger
 from src.db.models import User, create_user, get_all_active_users, get_user, update_user_activity
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class UserService:
